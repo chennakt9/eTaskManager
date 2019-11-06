@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+  <script src="script.js"></script>
+<style>
+   div.sticky{
+        position:-webkit-sticky;
+        position:sticky;
+        bottom:0;
+        background:white;
+        
+       }
+#abcd:hover{
+   border:2px solid #33D7CC;
+ 
+
+    }
+#asdf:hover{
+   outline:2px solid #33D7CC 
+
+    }
+#abcd{
+  margin-left:5px;
+ margin-top:0px;
+
+ }
+#zxc:link {
+  text-decoration: none;
+
+ 
+}
+
+#zxc:visited {
+  text-decoration: none;
+  color:#0000f1;
+}
+
+#zxc:hover {
+  text-decoration: underline;
+  color: #33D7CC;
+}
+
+#zxc:active {
+  text-decoration: underline;
+}
+#qwer{
+margin-right:0px;
+outline-offset: 0px;
+padding:0px;
+}
+
+
+
+</style>
+</head>
+<body>
+<br>
+
+<div id="qwer" class="container-fluid " style="margin-left:0px">
+  <h2>Task manager</h2>
+  <br>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home">Processes</a>
+    </li>
+ <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#performance">Performace</a>
+    </li>
+ 
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+
+    <div id="home" class="container-fluid tab-pane active" style="padding:0px;font-size:13px;"><br>
+      
+
+</div>
+
+
+
+
+<div id="performance" class="container-fluid tab-pane fade" style="font-size:13px;"><br>
+
+
+
+<div class="row">
+  <div class="col-2">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#MEMORY_percent" role="tab" aria-controls="v-pills-home" aria-selected="true" style="padding:20px">Memory percent</a>
+      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#CPU_percent" role="tab" aria-controls="v-pills-profile" aria-selected="false" style="padding:20px">CPU percent</a>
+      
+    </div>
+  </div>
+  <div class="col-10" >
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="MEMORY_percent" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <canvas id = "memory_percent"></canvas>
+
+      </div>
+      <div class="tab-pane fade" id="CPU_percent" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+            <canvas id = "cpu_percent"></canvas>
+         
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+  </div>
+ 
+<script>
+    require('./MemoryPercentCal.js');
+    require('./CpuPercentCal.js');	
+</script>
+</body>
+</html>

@@ -4,25 +4,26 @@
 
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-      #body_table > tr
-     hover{
-   border:2px solid #33D7CC;
-     }
-
-     tr{cursor: pointer; transition: all .25s ease-in-out}
-
-    .selected{background-color: red; font-weight: bold; color: #fff;}
-    </style>
+    
 
 </head>
 <body>
-    
-
     <div class="container">
-            <br><br>
-            <h1 class="text-primary">eTask Manager</h1>
-            <br>
+        <h1 class="text-primary">eTask Manager</h1>
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#home">Processes</a>
+        </li>
+     <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#performance">Performace</a>
+        </li>
+     
+      </ul>
+      
+    <div class="tab-content">
+    <div id="home" class="container-fluid tab-pane active" style="padding:0px;font-size:13px;"><br>
+
             <h2 id="click-response"></h2>
             <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-bottom">
                 <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
@@ -59,8 +60,8 @@
             </table>
             
           </div>
-
-
+        </div>
+</div>
 
     <script>
         
