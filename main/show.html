@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+      #body_table > tr
+     hover{
+   border:2px solid #33D7CC;
+     }
+
+     tr{cursor: pointer; transition: all .25s ease-in-out}
+
+    .selected{background-color: red; font-weight: bold; color: #fff;}
+    </style>
+
+</head>
+<body>
+    
+
+    <div class="container">
+            <br><br>
+            <h1 class="text-primary">eTask Manager</h1>
+            <br>
+            <h2 id="click-response"></h2>
+            <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-bottom">
+                <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                    <ul class="navbar-nav">
+                      <li class="nav-item pr-2" >
+                          <button class="btn btn-warning" id="expandbtn">Expand</button>
+                      </li>
+                      
+                      <li class="nav-item">
+
+                        <button class="btn btn-primary float-right" id="endbtn">End task</button>
+                      </li>
+                    </ul>
+                  </div>
+              
+            </nav>
+
+            <table class="table table-striped" id="table_cre">
+              <thead>
+                <tr>
+                  <th>pid</th>
+                  <th>Memory %</th>
+                  <th>Cpu %</th>
+                  <th>name</th>
+                  <th>status</th>
+                </tr>
+              </thead>
+
+              <tbody id="body_table">
+
+                
+              </tbody>
+
+            </table>
+            
+          </div>
+
+
+
+    <script>
+        
+				require('../scripts/show_and_kill_processes.js');
+
+</script>
+
+</body>
+</html>

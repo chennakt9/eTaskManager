@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Expand</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <br><br>
+    <!-- <h1>I'm Expand Window</h1> -->
+    
+
+    <!-- <table class="table table-striped" id="chidren_table">
+        <thead>
+          <tr>
+            <th>pid</th>
+            <th>Memory %</th>
+            <th>Cpu %</th>
+            <th>name</th>
+            <th>status</th>
+          </tr>
+        </thead>
+
+        <tbody id="children_table_body">
+
+          
+        </tbody>
+
+      </table> -->
+    <h2 id="head" class="text-info"></h2>
+    <br>
+    <table class="table table-striped" id="threads_table">
+        <thead>
+          <tr>
+            <th>tid</th>
+            <th>User time</th>
+            <th>System time</th>
+            
+          </tr>
+        </thead>
+
+        <tbody id="threads_table_body">
+
+          
+        </tbody>
+
+      </table>
+
+      <div class="alert alert-warning" style="display: none;" id="threads_none_alert">
+        <strong>No</strong> threads threads running under this process !
+      </div>
+
+      <div class="alert alert-danger" style="display: none;" id="access_denied_alert">
+            <strong>Access</strong> denied to show the threads !
+          </div>
+
+      <div class="alert alert-danger" id="error_alert" style="display: none;">
+            <strong>No threads to show</strong><br>
+            <strong>Error</strong> Processing your request
+      </div>
+
+    <script>
+        require("../scripts/expand_processes.js")
+    </script>
+    </div>
+</body>
+</html>
