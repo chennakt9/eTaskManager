@@ -8,17 +8,21 @@
 <body>
     <div class="container">
         <br><br>
-    <!-- <h1>I'm Expand Window</h1> -->
     
-
-    <!-- <table class="table table-striped" id="chidren_table">
+      <!-- children table along with error alerts -->
+      <h2 id="children_head" class="text-info"></h2>
+      <br>
+    <table class="table table-striped" id="chidren_table">
         <thead>
           <tr>
-            <th>pid</th>
+            <th>Name</th>
+            <th>Pid</th>
+            <th>Ppid</th>
+            <th>Number of threads</th>
+            <th>User Name</th>
             <th>Memory %</th>
-            <th>Cpu %</th>
-            <th>name</th>
-            <th>status</th>
+            <th>CPU %</th>
+            <th>Status</th>
           </tr>
         </thead>
 
@@ -27,8 +31,20 @@
           
         </tbody>
 
-      </table> -->
-    <h2 id="head" class="text-info"></h2>
+      </table>
+
+    <!-- CHILDREN ERRORS -->
+    <div class="alert alert-warning" style="display: none;" id="children_none_alert">
+        <strong>No</strong> threads running under this process !
+      </div>
+
+      <div class="alert alert-danger" style="display: none;" id="children_access_denied_alert">
+            <strong>Access</strong> denied to show the threads !
+          </div>
+      <!-- CHILDREN ERRORS ENDS-->
+
+      <!-- threads table along with error alerts -->
+    <h2 id="threads_head" class="text-info"></h2>
     <br>
     <table class="table table-striped" id="threads_table">
         <thead>
@@ -47,18 +63,23 @@
 
       </table>
 
+
+      <!-- THREADS ERRORS -->
       <div class="alert alert-warning" style="display: none;" id="threads_none_alert">
-        <strong>No</strong> threads threads running under this process !
+        <strong>No</strong> threads running under this process !
       </div>
 
-      <div class="alert alert-danger" style="display: none;" id="access_denied_alert">
+      <div class="alert alert-danger" style="display: none;" id="threads_access_denied_alert">
             <strong>Access</strong> denied to show the threads !
           </div>
+      <!-- THREADS ERRORS ENDS-->
 
+          <!-- GLOBAL ERROR -->
       <div class="alert alert-danger" id="error_alert" style="display: none;">
-            <strong>No threads to show</strong><br>
-            <strong>Error</strong> Processing your request
+          <strong>Error</strong> Processing your request
       </div>
+
+      
 
     <script>
         require("../scripts/expand_processes.js")
