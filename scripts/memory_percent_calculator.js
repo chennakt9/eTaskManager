@@ -11,10 +11,11 @@ try{
     let array = [] ;
 
     for (let i = 0; i < 60; i++) {
+        // array[i] = i+1;
         if(((i+1)%10)== 0){
             array[i]= i+1 ;
         }
-        else array[i]= ""
+        else array[i]= " "
     }
  
     let chart = document.getElementById('memory_percent');
