@@ -17,8 +17,7 @@
     "child_process": "^1.0.2",
     "electron": "^6.0.9",
     "python-shell": "^1.0.8",
-    "popper.js":"^1.14.4",
-    "jquery":"^3.4.1"
-
+    "popper.js": "^1.14.4",
+    "jquery": "^3.4.1"
   }
 }
