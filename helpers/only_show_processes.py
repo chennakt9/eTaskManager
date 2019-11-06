@@ -1,8 +1,5 @@
 import psutil, time, sys
-try: 
-  import simplejson as json
-except:
-  import json
+import json
 
 
 while(True):
@@ -16,7 +13,7 @@ while(True):
       temp_dictin['memory_percent'] = round(temp_dictin['memory_percent'], 2)
       final_dict["key_f"].append(temp_dictin)
       # print(json.dumps(obj),flush=False)    
-      # sys.stdout.flush()
-  print(json.dumps(final_dict))
-
-  time.sleep(1)
+      
+  print(json.dumps(final_dict),flush=False)
+  sys.stdout.flush()
+  time.sleep(0.1)

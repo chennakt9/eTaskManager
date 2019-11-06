@@ -25,10 +25,11 @@ const electron = require('electron');
 
 
             python_s.stdout.on('data',function(out_put){
-                console.log("hii")
+                // console.log("hii")
                 var ans = JSON.parse(out_put.toString('utf8'));
-                console.log(ans);
-
+                // console.log(ans);
+                document.getElementById("children_table_body").innerHTML="";
+                document.getElementById("threads_table_body").innerHTML="";
                 if(ans["error"]){
                     console.log(ans["error"])
                     document.getElementById("error_alert").style.display = "block"

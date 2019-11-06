@@ -4,11 +4,15 @@
 
     <title>Document</title>
     <script src="../scripts/script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
+      <br>
         <h1 class="text-primary">eTask Manager</h1>
-
+        <br>
+       <div class="sticky-top" style="background: white;">
     <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" data-toggle="tab" href="#home">Processes</a>
@@ -18,6 +22,8 @@
         </li>
      
       </ul>
+    </div>
+    
       
     <div class="tab-content">
     <div id="home" class="container-fluid tab-pane active" style="padding:0px;font-size:13px;"><br>
@@ -58,12 +64,45 @@
             </table>
             
           </div>
+
+          <div id="performance" class="container-fluid tab-pane fade" style="font-size:13px;"><br>
+
+
+
+            <div class="row">
+              <div class="col-2">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#MEMORY_percent" role="tab" aria-controls="v-pills-home" aria-selected="true" style="padding:20px">Memory percent</a>
+                  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#CPU_percent" role="tab" aria-controls="v-pills-profile" aria-selected="false" style="padding:20px">CPU percent</a>
+                  
+                </div>
+              </div>
+              <div class="col-10" >
+                <div class="tab-content" id="v-pills-tabContent">
+                  <div class="tab-pane fade show active" id="MEMORY_percent" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <canvas id = "memory_percent"></canvas>
+            
+                  </div>
+                  <div class="tab-pane fade" id="CPU_percent" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <canvas id = "cpu_percent"></canvas>
+                     
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+            
+            
+            </div>
+
         </div>
 </div>
 
     <script>
         
-				require('../scripts/show_and_kill_processes.js');
+        require('../scripts/show_and_kill_processes.js');
+        require('../scripts/memory_percent_calculator.js');
+        require('../scripts/cpu_percent_calculator.js');
 
 </script>
 

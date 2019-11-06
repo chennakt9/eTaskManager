@@ -22,7 +22,7 @@ function sentrie(data){
     }
     
 
-    console.log(ans["key_f"]);
+    // console.log(ans["key_f"]);
 
 
     document.getElementById("body_table").innerHTML=""; //Updating content dynamiclally
