@@ -69,13 +69,20 @@ const electron = require('electron');
                         document.getElementById("children_none_alert").style.display = "block"
                     }else{
 
+                        x_vals = []
+                        y_vals = []
+
                         for (let i = 0; i < ans["children"]["output"].length; i++) {
                         var row = document.createElement("tr");
                         
                         makecol(row,ans["children"]["output"][i]["name"]);
+                        x_vals[i] = ans["children"]["output"][i]["name"]
+
                         makecol(row,ans["children"]["output"][i]["pid"]);
                         makecol(row,ans["children"]["output"][i]["ppid"]);
-                        makecol(row,ans["children"]["output"][i]["num_threads"]);
+                        // makecol(row,ans["children"]["output"][i]["num_threads"]);
+                        y_vals[i] = ans["children"]["output"][i]["num_threads"]
+
                         makecol(row,ans["children"]["output"][i]["username"]);
                         makecol(row,ans["children"]["output"][i]["memory_percent"]);
                         makecol(row,ans["children"]["output"][i]["cpu_percent"]);
@@ -87,6 +94,58 @@ const electron = require('electron');
                         
                         
                     }
+
+                    // console.log(x_vals)
+                    // console.log(y_vals)
+
+                    let chart = document.getElementById('threads_show');
+
+                    let lineChart = new Chart(chart, { 
+                        type : 'doughnut',
+                        data : {
+                            labels: x_vals,
+                            datasets : [{
+                                label : 'CPU PERCENT',
+                                backgroundColor : ['rgba(0,128,128,.9)',
+                                'rgba(68, 194, 66,0.8)',
+                                'rgba(67, 176, 176,0.8)',
+                                'rgba(59, 50, 115,0.8)',
+                                'rgba(156, 43, 166,0.8)',
+                                'rgba(166, 43, 117,0.8)',
+                                'rgba(145, 35, 55,0.8)',
+                                'rgba(145, 72, 35,0.8)',
+                                'rgba(224, 142, 101,0.8)',
+                                'rgba(107, 86, 75,0.8)',
+                                'rgba(107, 171, 17,0.8)',
+                                'rgba(10, 233, 245,0.8)',
+                                'rgba(247, 232, 250,0.8)',
+                                'rgba(13, 12, 13,0.8)',
+                                'rgba(219, 0, 0,0.8)'
+                                
+                            ],
+                            borderWidth:1,
+                            borderColor:'#777',
+                            hoverBorderWidth:3,
+                            hoverBorderColor:'#000',
+                            data : y_vals,
+                            borderWidth:0.6,
+                            borderColor:'black'
+                            
+                            }]
+                        },
+                
+                            options: {
+                                
+                                title: {
+                                    display : true,
+                                    text : "No of threads per child process",
+                                    fontSize : 18
+                                },
+                                animation: {
+                                    duration: 0
+                                }
+                            }
+                    })
 
                     }
                     
