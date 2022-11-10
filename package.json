@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "child_process": "^1.0.2",
-    "electron": "^6.0.9",
+    "electron": "^18.3.7",
     "python-shell": "^1.0.8",
     "popper.js": "^1.14.4",
     "jquery": "^3.4.1",
